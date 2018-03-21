@@ -10,3 +10,7 @@ export function rootReducer(state: IAppState, action): IAppState{
     }
  return state;
 }
+
+export const INITIAL_STATE: IAppState = {
+    counter: 0
+}
