@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgRedux } from 'ng2-redux';
+import { IAppState } from './store';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +10,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Redux with Ng';
   counter = 0;
+
+  constructor(private ngRedux: NgRedux<IAppState>){
+
+  }
   increment(){
-      this.counter++;
+      // this.counter++;
+      this.ngRedux.dispatch({type: 'INCREMENT'});
   }
 }
